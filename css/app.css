@@ -1,0 +1,59 @@
+.group:after {content: "";display: table;clear: both;}
+
+.nav {}
+	.nav>li {
+		float: left;
+	}
+		.nav>li>a {
+			padding: 15px;
+			box-sizing: border-box;
+		}
+		.nav>li>a:hover {
+			background: rgba(0,0,0,0.3);
+		}
+
+html {
+	background: transparent url(../img/webtreats_wood-pattern8-512.jpg);
+	position: relative;
+	z-index: -1;
+}
+
+body {
+	background: transparent;
+	position: relative;
+	color: white;
+	z-index: 0;
+}
+	body>*:not(#flickr-container) {
+		background: rgba(0,0,0,0.7);
+		padding: 11px;
+	}
+
+main {
+}
+
+#flickr-container {
+	background: transparent;
+	width: 100% !important;
+	position: relative;
+	margin: 0 auto;
+	height: 100%;
+	z-index: -1;
+	left: 0;
+	top: 0;
+}
+	#flickr-container img {
+		box-shadow: 1px 1px 90px rgba(255,255,255,0.3);
+	}
+	#flickr-container img:hover {
+		-wekbit-transform: scale(1.20, 1.20);
+		   -moz-transform: scale(1.20, 1.20);
+			 -o-transform: scale(1.20, 1.20);
+				transform: scale(1.20, 1.20);
+	}
+
+@media screen and (min-width: 1031px){
+}
+
+@media screen and (min-width: 1545px){
+}
