@@ -1,15 +1,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-</head>
-<body>
+	<title>The Rolling Bulldog Tattoo &amp; Phil Chandler | Mobile Tattoo Trailer</title><!-- Length? -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Bulldog Tattoo is a custom tattoo shop in Glendale, AZ. Phil Chandler, a tattoo artist of over 25 years, provides the best custom tattoos in the Glendale and Phoenix areas.">
+	
+	<!-- Bootstrap CSS -->
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+	<!-- Font AWesome -->
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<!-- Isotope CSS -->
+	<!-- <link rel="stylesheet" type="text/css" href="/css/isotope.css"> -->
 
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+	<!-- Bulldog Tattoo CSS -->
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
+
+</head>
+<body class="group">
+
+	<header>
+		
+		<h1 class="logo">Bulldog Tattoo</h1>
+		<h2>Phoenix and Glendales Premiere Tattoo Shop</h2>
+
+		<ul role="nav" class="nav group">
+			<li><a href="/">Home</a></li>
+			<li><a href="/about.html">About <span class="newline">Bulldog Tattoo</span></a></li>
+			<li><a href="/portfolio.html">Portfolio</a></li>
+		</ul>
+
+	</header>
+
+	<main role="main" class="row-fluid group">
+
+		<section class="span8">
+			
+			<h1>Custom Tattoos in Phoenix</h1>
+			<p>Like you, I used to think the world was this great place where everybody lived by the same standards I did, then some kid with a nail showed me I was living in his world, a world where chaos rules not order, a world where righteousness is not rewarded. That's Cesar's world, and if you're not willing to play by his rules, then you're gonna have to pay the price.</p>
+
+		</section>
+
+		<aside role="complimentary" class="span4">
+
+			<h2>Tattoo Ideas</h2>
+			<p>The lysine contingency - it's intended to prevent the spread of the animals in case they ever got off the island. Dr. Wu inserted a gene that makes a single faulty enzyme in protein metabolism. The animals can't manufacture the amino acid lysine. Unless they're continually supplied with lysine by us, they'll slip into a coma and die.</p>
+
+		</aside>
+
+	</main>
+
+	<footer>
+	</footer>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	<script src="/js/app.js"></script>
+	<script src="/js/jquery.isotope.min.js"></script>
+	<script>
+	$(window).load(function(){
+
+		$(function(){
+			
+			var $container = $('#flickr-container'),
+			$body = $('body'),
+			colW = 1, // wat?
+			columns = null;
+			
+			$container.isotope({
+				resizable: false,
+				masonry: {
+					columnWidth: colW
+				}
+			});
+			
+			$(window).smartresize(function(){
+				// check if columns has changed
+				var currentColumns = Math.floor( ( $body.width() -10 ) / colW );
+				if ( currentColumns !== columns ) {
+				  // set new column count
+				  columns = currentColumns;
+				  // apply width to container manually, then trigger relayout
+				  $container.width( columns * colW )
+				  .isotope('reLayout');
+			  }
+			  
+			  }).smartresize(); // trigger resize to set container width
+			
+		});
+
+		// Setting the position for the isotope background
+		bHeight = $('body').height();
+		fHeight = $('#flickr-container').height();
+
+		fPosTop = ( (bHeight - fHeight) * -1 );
+
+		$('#flickr-container').css('top', fPosTop);
+
+	});
+	
+	</script>
 </body>
+<div id="flickr-container" class="group"></div>
 </html>
